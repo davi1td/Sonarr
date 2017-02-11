@@ -1,0 +1,5 @@
+.languages {
+  margin-top: 10px;
+  /* TODO: This should consider the number of languages in the list */
+  min-height: 550px;
+}

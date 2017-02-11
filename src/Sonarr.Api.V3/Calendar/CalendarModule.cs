@@ -33,7 +33,7 @@ namespace Sonarr.Api.V3.Calendar
             if (queryEnd.HasValue) end = DateTime.Parse(queryEnd.Value);
             if (queryIncludeUnmonitored.HasValue) includeUnmonitored = Convert.ToBoolean(queryIncludeUnmonitored.Value);
 
-            var resources = MapToResource(_episodeService.EpisodesBetweenDates(start, end, includeUnmonitored), true, true);
+            var resources = MapToResource(_episodeService.EpisodesBetweenDates(start, end, includeUnmonitored), false, false);
 
             return resources.OrderBy(e => e.AirDateUtc).ToList();
         }
